@@ -24,6 +24,15 @@ class Login :
             self.u_passe = temp_var
             return self.u_passe
 
+    def regitro(self):
+        u_mail = Login().add_mail()
+        u_passe = Login().add_pase()
+        self.users[u_mail] = u_passe
+        return self.users
+
+a = Login().regitro()
+print(a)
+
 
 
 

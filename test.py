@@ -1,2 +1,2 @@
-t = 'a1234567'
-print(len(t))
+from login import Login as lg
+

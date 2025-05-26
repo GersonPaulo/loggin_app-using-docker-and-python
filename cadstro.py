@@ -1,4 +1,4 @@
-class Login :
+class Cadastro :
     def __init__(self):
         self.users = dict()
         self.u_mail = str()
@@ -25,28 +25,25 @@ class Login :
             return self.u_passe
 
 
-
+    def verify_mail_in_users(self):
+        temp_u_mail = Cadastro().add_mail()
+        while temp_u_mail in self.users:
+            print('Mail já registado')
+            temp_u_mail = Cadastro().add_mail()
+        if temp_u_mail not in self.users:
+            self.u_mail = temp_u_mail
+            return self.u_mail
 
     def registro_user(self):
-        u_mail = Login().add_mail()
-        u_passe = Login().add_pase()
-        self.users[u_mail] = self.u_passe
+        u_mail = Cadastro().verify_mail_in_users()
+        u_passe = Cadastro().add_pase()
+        self.users[u_mail] = u_passe
         return self.users
-'''
-    def verify_mail(self):
-        verif_umail = Login().add_mail()
-        while self.u_mail in self.users:
-            print('E-mail já registrado')
-            verif_umail = Login().add_mail()
-        if self.u_mail not in self.users:
-            self.users()[v]
-            return False 
-'''
 
 
 
 
-a = Login().registro_user()
+a = Cadastro().registro_user()
 print(a)
 
 

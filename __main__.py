@@ -13,6 +13,10 @@ class App:
     def see_users(self):
         self.cadastro.mostrar_users()
 
+    def see_recover_user(self):
+        self.cadastro.mostrar_passe()
+
+
 
 
 def display_menu():
@@ -20,7 +24,7 @@ def display_menu():
     print("\n=== App Menu ===")
     print("1. Register a new user")
     print("2. List all registered users")
-    print("3. create")
+    print("3. Recover a user")
     print("0. Exit\n")
     return input("Select an option: ")
 
@@ -28,14 +32,15 @@ def main():
     manager = App()
     while True:
         choice = display_menu()
-        print(choice)
         try:
             if choice == '1':
                 manager.create_new_user()
                 print("New User Created successfully!")
             elif choice == '2':
                 manager.see_users()
-                print("User listed successfully!")
+                print("Users listed successfully!")
+            elif choice == '3':
+                manager.see_recover_user()
             elif choice == '0':
                 print("Exiting...")
                 sys.exit(0)

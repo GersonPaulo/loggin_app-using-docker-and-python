@@ -1,34 +1,41 @@
 from cadstro import  Cadastro
 import sys
-new_user = Cadastro().registro_user()
 
 class App:
     def __init__(self):
-        self.new_user = new_user
+        self.cadastro = Cadastro()
+
 
     def create_new_user(self):
-        insert = self.new_user
+        self.cadastro.registro_user()
+
+
+    def see_users(self):
+        self.cadastro.mostrar_users()
+
 
 
 def display_menu():
     """Display the interactive menu."""
     print("\n=== App Menu ===")
     print("1. Register a new user")
-    print("2. create")
+    print("2. List all registered users")
     print("3. create")
     print("0. Exit\n")
-
     return input("Select an option: ")
 
 def main():
     manager = App()
     while True:
         choice = display_menu()
-
+        print(choice)
         try:
             if choice == '1':
-                manager.new_user()
+                manager.create_new_user()
                 print("New User Created successfully!")
+            elif choice == '2':
+                manager.see_users()
+                print("User listed successfully!")
             elif choice == '0':
                 print("Exiting...")
                 sys.exit(0)

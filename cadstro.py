@@ -1,11 +1,4 @@
-import sqlite3
-
-class CadastroDB:
-    def __init__(self, db_path="users.db"):
-        self.db_path = db_path
-        self.conn = sqlite3.connect(self.db_path)
-        self.conn.execute("""CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, password TEXT NOT NULL)""")
-
+import mysql.connector
 class Cadastro :
     def __init__(self):
         self.u_mail = str()

@@ -1,10 +1,18 @@
 import mysql.connector
+from mysql.connector import Error
+
 class Cadastro :
     def __init__(self):
         self.u_mail = str()
         self.u_passe = str()
         self.users = dict()
+        try:
+            self.db = mysql.connector.connect(host="localhost", user="root", passwd="<PASSWORD>", database="Users")
+            self.mycursor = self.db.cursor()
 
+
+    def create_users_table(self):
+        self.mycursor.execute("CREATE TABLE Users (email varchar(50) NOT NULL, password varchar(50) NOT NULL, user_id int PRIMARY KEY NOT NULL) ")
 
     #pede o email ao para o registro e verifica se o mail é valido
     def add_mail(self):

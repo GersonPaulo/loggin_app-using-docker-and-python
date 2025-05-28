@@ -1,5 +1,3 @@
-import mysql.connector
-from mysql.connector import Error
 
 class Cadastro :
     def __init__(self):

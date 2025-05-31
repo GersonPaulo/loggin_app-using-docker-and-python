@@ -1,11 +1,11 @@
 import psycopg2
 import psycopg2.extras
 
-host = "localhost"
-database = "usuarios"
-username = "postgres"
-pwd = "101213K"
-port_id = "5432"
+host = "*************"
+database = "*************"
+username = "*********"
+pwd = "**********"
+port_id = "***********"
 
 class DatabaseManager:
     def __init__(self):
